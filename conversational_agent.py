@@ -77,7 +77,7 @@ def upload_file(file):
         os.mkdir(UPLOAD_FOLDER)
     shutil.copy(file, UPLOAD_FOLDER)
     documents = SimpleDirectoryReader(input_files=[file]).load_data()
-    llm = Ollama(model="llama2", request_timeout=2000.0)
+    llm = Ollama(model="llama3", request_timeout=2000.0)
     
     Settings.embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
     Settings.llm = llm
@@ -96,7 +96,7 @@ def upload_file(file):
 
 def doc_genie(message, history):
     Settings.embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
-    llm = Ollama(model="llama2", request_timeout=2000.0)
+    llm = Ollama(model="llama3", request_timeout=2000.0)
     
 
 
@@ -146,7 +146,7 @@ def doc_genie(message, history):
 
 def genie(message, history):
     Settings.embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
-    llm = Ollama(model="llama2", request_timeout=2000.0)
+    llm = Ollama(model="llama3", request_timeout=2000.0)
     #llm = Ollama(model="llama2", request_timeout=2000.0)
 
 
