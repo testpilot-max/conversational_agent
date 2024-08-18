@@ -60,7 +60,7 @@ chat_refine_msgs = [
 refine_template = ChatPromptTemplate.from_messages(chat_refine_msgs)
 
 def setup_llm_and_settings():
-    llm = Ollama(model="llama2", request_timeout=100.0)
+    llm = Ollama(model="llama3", request_timeout=100.0)
     Settings.embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
     Settings.llm = llm
     Settings.tokenizer = tiktoken.encoding_for_model("gpt-3.5-turbo").encode
